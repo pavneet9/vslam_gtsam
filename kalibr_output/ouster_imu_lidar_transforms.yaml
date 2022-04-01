@@ -1,0 +1,11 @@
+# all translations are in meters
+# all rotations are in quaternion (qx, qy, qz, qw) 
+
+os1_lidar_to_os1_imu:
+  translation : [-0.006253, 0.011775, -0.028535] 
+  rotation : [0.0, 0.0, -1.0, 0.0]
+
+os1_imu_to_os1_lidar:
+  translation : [-0.006253, 0.011775, 0.028535] 
+  rotation : [0.0, 0.0, 1.0, 0.0]
+
