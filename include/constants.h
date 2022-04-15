@@ -17,6 +17,11 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 
+#include <vector>
+#include <string>
+#include <unistd.h>
+#include <sstream>
+#include <iostream>
 
 #include <string>
 
@@ -31,13 +36,15 @@ const std::string camera_topic_2 = "/camera/infra2/image_rect_raw";
 const float f_x = 431.3873911369959;
 const float f_y =  430.2496176152663;
 const float u = 427.4407802012019;
-const float v = 238.52694867508183;  
+const float v = 238.52694867508183; 
+const float baseline = 0.05;     // baseline for intel reaslsense camera 
 
-float k_data[9] = {f_x, 0, u, 0, f_y, v, 0, 0, 1};
-cv::Mat K(3, 3, CV_32FC1, k_data);
+cv::Mat K = (cv::Mat_<double>(3, 3) << f_x, 0, u,
+                0, f_y , v,
+                0, 0, 1);
 
 float dist_data[4] = { 431.3873911369959 ,  430.2496176152663, 427.4407802012019, 238.52694867508183};
-cv::Mat distrotion(1, 4, CV_32FC1, dist_data);
+cv::Mat distortion(1, 4, CV_32FC1, dist_data);
 
 
 #endif

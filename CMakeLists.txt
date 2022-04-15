@@ -158,8 +158,13 @@ include_directories(${Sophus_INCLUDE_DIRS})
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/slam_gtsam_node.cpp)
 
+add_library(types src/types.cpp)
+
+
+add_library(map src/map.cpp)
+
 add_executable(stereo_tracking src/stereo_tracking.cpp)
-target_link_libraries(stereo_tracking ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES} ${Sophus_LIBRARIES} )
+target_link_libraries(stereo_tracking types map ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES} ${Sophus_LIBRARIES} fmt )
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

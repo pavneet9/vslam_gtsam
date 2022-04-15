@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "*.ipp": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "core": "cpp",
+        "numericaldiff": "cpp",
+        "iostream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
+    }
+}
